@@ -1,10 +1,8 @@
 using NUnit.Framework;
 using NUnit.Framework.Internal;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using WebCalcSelenium.Pages;
 
 namespace WebCalcSelenium
@@ -19,12 +17,9 @@ namespace WebCalcSelenium
             try
             {
                 driver = new EdgeDriver(@"C:\tools\msedgedriver\");
-                //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(3000);
-                
             }
             catch (Exception e)
             {
-
                 TestContext.Error.Write(e.Message);
             }
 
@@ -50,7 +45,7 @@ namespace WebCalcSelenium
         [TearDown]
         public void TearDown()
         {
-            //driver.Quit();
+            driver.Quit();
         }
     }
 }
